@@ -7,20 +7,15 @@ import React from 'react';
 // import LifeCycleDerivedState from "./LifeCycleDerivedState";
 import LifeCycleDidMount from "./LifeCycle/LifeCycleDidMount";
 import LifeCycleshouldComponentUpdate from "./LifeCycle/LifeCycleshouldComponentUpdate";
+import Es6 from "./Es6";
 
 function App() {
   return (
   <div>
     <h1>Start React 200!</h1>
-    {/*<p>CSS 적용하기</p>*/}
+    <p>CSS 적용하기</p>
+<Es6/>
 
-    <LifeCycleDidMount
-        prop_value = 'LifeCycleDidMount'
-    ></LifeCycleDidMount>
-
-    <LifeCycleshouldComponentUpdate
-      prop_value = 'LifeCycleShould'
-      ></LifeCycleshouldComponentUpdate>
   </div>
   );
 }
