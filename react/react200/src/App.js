@@ -5,8 +5,8 @@ import React from 'react';
 // import LifeCycleRender from "./LifeCycleRender";
 // import LifeCycleConstructor from "./LifeCycleConstructor";
 // import LifeCycleDerivedState from "./LifeCycleDerivedState";
-import LifeCycleDidMount from "./LifeCycleDidMount";
-import LifeCycleshouldComponentUpdate from "./LifeCycleshouldComponentUpdate";
+import LifeCycleDidMount from "./LifeCycle/LifeCycleDidMount";
+import LifeCycleshouldComponentUpdate from "./LifeCycle/LifeCycleshouldComponentUpdate";
 
 function App() {
   return (
