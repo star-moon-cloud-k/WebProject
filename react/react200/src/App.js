@@ -8,14 +8,13 @@ import ClassPrototype from "./component/ClassPrototype";
 import ArrowFunction from "./component/ArrowFunction";
 import ForEach from "./component/ForEach";
 import Map from "./component/Map";
-
+import JQuery from "./component/JQuery";
 function App() {
     return (
         <div>
             <h1>Start React 200!</h1>
             <p>CSS 적용하기</p>
-            <ClassPrototype/>
-            <Map/>
+            <JQuery/>
         </div>
     );
 }
