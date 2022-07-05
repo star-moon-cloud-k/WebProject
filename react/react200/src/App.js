@@ -7,6 +7,7 @@ import SpreadOperator from "./component/SpreadOperator";
 import ClassPrototype from "./component/ClassPrototype";
 import ArrowFunction from "./component/ArrowFunction";
 import ForEach from "./component/ForEach";
+import Map from "./component/Map";
 
 function App() {
     return (
@@ -14,7 +15,7 @@ function App() {
             <h1>Start React 200!</h1>
             <p>CSS 적용하기</p>
             <ClassPrototype/>
-            <ForEach/>
+            <Map/>
         </div>
     );
 }
