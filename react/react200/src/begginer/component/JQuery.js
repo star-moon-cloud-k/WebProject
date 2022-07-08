@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import $ from 'jquery';
-import ForceUpdate from "../../basic/component/ForceUpdate";
+
 class JQuery extends Component{
     input_alert = () =>{
         var input_val = $('#inputId').val()

@@ -3,9 +3,13 @@ package Hello.SpringMVC.service;
 import Hello.SpringMVC.domain.Member;
 import Hello.SpringMVC.repository.MemberRepository;
 import Hello.SpringMVC.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Optional;
+
 
 public class MemberService {
 
