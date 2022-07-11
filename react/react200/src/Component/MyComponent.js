@@ -1,7 +1,6 @@
 import React from "react";
-
-const MyComponent = props =>{
-    const {name, children, age} = props;
+import PropTypes from "prop-types";
+const MyComponent = ({name , children, age}) =>{
    return (
        <div>
           안녕하세요, 제 이름은 {name} 나이는 {age} <br/>
@@ -13,4 +12,10 @@ const MyComponent = props =>{
 MyComponent.defaultProps = {
    name : '기본 이름'
 };
+
+MyComponent.propTypes = {
+    name : PropTypes.string,
+    children : PropTypes.string,
+    age : PropTypes.number
+}
 export default MyComponent;
