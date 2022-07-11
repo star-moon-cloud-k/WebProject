@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import MyComponent from "./Component/MyComponent";
+import Counter from "./Component/Counter";
 
 const App = () => {
     const age = 5;
-    return (
-        <MyComponent age = {age}  favoriteNumber={1}>리액트</MyComponent>
+    return (<>
+        <Counter/>
+        </>
     )
 
 

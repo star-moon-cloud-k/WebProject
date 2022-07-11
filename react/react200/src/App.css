@@ -1,9 +1,9 @@
 div{
   background-color: rgb(162, 127, 243);
   color: rgb(255, 255 , 255);
-  padding: 40px;
+  padding: 10px;
   font-family: 고딕;
-  font-size: 49px;
+  font-size: 40px;
   text-align: center;
 }
 .react{
@@ -15,9 +15,14 @@ div{
 }
 h1{
   color : white;
-  background-color: #Df3962;
-  padding: 101px;
+  background-color: #Ff3960;
+  padding: 10px;
   font-family: 궁서;
+}
+button{
+  background: #Df3962;
+  color : white;
+  border : black;
 }
 /*.App {*/
 /*  text-align: center;*/
