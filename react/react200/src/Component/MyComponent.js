@@ -1,6 +1,13 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 class MyComponent extends Component{
+    static defaultProps = {
+        name : "static 이름"
+    };
+    static propTypes ={
+        name : PropTypes.string,
+        favoriteNumber : PropTypes.number.isRequired
+    }
     render() {
         const {name, favoriteNumber, children , age} = this.props;       //비구조화 할당
 
@@ -17,15 +24,5 @@ class MyComponent extends Component{
     };
 };
 
-    MyComponent.defaultProps = {
-   name : '기본 이름',
-    // favoriteNumber : 44
-};
 
-MyComponent.propTypes = {
-    name : PropTypes.string,
-    children : PropTypes.string,
-    age : PropTypes.number,
-    favoriteNumber: PropTypes.number.isRequired
-}
 export default MyComponent;
