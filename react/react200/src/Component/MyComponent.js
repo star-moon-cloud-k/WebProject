@@ -1,21 +1,31 @@
-import React from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-const MyComponent = ({name , children, age}) =>{
-   return (
-       <div>
-          안녕하세요, 제 이름은 {name} 나이는 {age} <br/>
-          children 값은 {children}
-          입니다.
-       </div>
-   );
+class MyComponent extends Component{
+    render() {
+        const {name, favoriteNumber, children , age} = this.props;       //비구조화 할당
+
+
+        return (
+            <div>
+                안녕하세요, 제 이름은 {name} 나이는 {age} <br/>
+                children 값은 {children}
+                입니다.
+                <br/>
+                제가 제일 좋아하는 숫자는 {favoriteNumber}입니다.
+            </div>
+        );
+    };
 };
-MyComponent.defaultProps = {
-   name : '기본 이름'
+
+    MyComponent.defaultProps = {
+   name : '기본 이름',
+    // favoriteNumber : 44
 };
 
 MyComponent.propTypes = {
     name : PropTypes.string,
     children : PropTypes.string,
-    age : PropTypes.number
+    age : PropTypes.number,
+    favoriteNumber: PropTypes.number.isRequired
 }
 export default MyComponent;
