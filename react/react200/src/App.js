@@ -3,8 +3,9 @@ import './App.css';
 import MyComponent from "./Component/MyComponent";
 
 const App = () => {
+    const age = 5;
     return (
-        <MyComponent>리액트</MyComponent>
+        <MyComponent age = {age}>리액트</MyComponent>
     )
 
 
