@@ -3,7 +3,8 @@ import './App.css';
 import MyComponent from "./Component/MyComponent";
 
 const App = () => {
-    return (            <MyComponent/>
+    return (<MyComponent name ="React "
+        age = '4'/>
     )
 
 
