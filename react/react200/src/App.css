@@ -1,5 +1,5 @@
 div{
-  background-color: rgb(162, 127, 243);
+  background-color: rgb(60, 63, 65);
   color: rgb(255, 255 , 255);
   padding: 10px;
   font-family: 고딕;
@@ -15,12 +15,12 @@ div{
 }
 h1{
   color : white;
-  background-color: #Ff3960;
+  background-color: #609354;
   padding: 10px;
   font-family: 궁서;
 }
 button{
-  background: #Df3962;
+  background: #374751;
   color : white;
   border : black;
 }
