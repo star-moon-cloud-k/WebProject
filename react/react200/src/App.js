@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './App.css';
 
 function App() {
-    const name = '리액트x'
-    return <div>{name === '리액트' ? <h1>리액트 입니다.</h1> : null}</div>
+    const name = undefined;
+    return <div>{name || 'undefined 때 쓰고 싶은말 쓰기'}</div>
 }
 
 export default App;
