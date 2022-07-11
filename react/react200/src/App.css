@@ -5,7 +5,13 @@ div{
   font-family: 고딕;
   text-align: center;
 }
-
+.react{
+  blackgound : rgb(111, 127, 243);
+  color : aliceblue;
+  font-weight : revert;
+  padding : 1px;
+  font-size: 155px;
+}
 h1{
   color : white;
   background-color: #Df3962;
