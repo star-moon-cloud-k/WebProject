@@ -7,15 +7,15 @@ import EventPractice from "./Component/EventPractice";
 import EventPracticeComponent from "./Component/EventPracticeComponent";
 import ValidationSample from "./validation/ValidationSample";
 import RefSample from "./validation/RefSample";
+import ScrollBox from "./ScrollBox";
 class App extends Component{
     render() {
+        const age = 5;
         return (<>
-                <RefSample/>
-                <ValidationSample/>
+                <ScrollBox ref ={(ref) => this.scrollBox =ref}/>
+                <button onClick={()=>this.scrollBox.scrollToBottom()}>아래로</button>
                 <Counter/>
-                <Say/>
                 <EventPractice/>
-                <EventPracticeComponent/>
             </>
         )
     }
