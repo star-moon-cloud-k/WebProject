@@ -4,10 +4,10 @@ import {number} from "prop-types";
 const IterationSample = () =>{
 
     const names = ['눈사람', '얼음', '눈', '바람']
-    const namelist = names.map(name => <li>{name}</li>)
+    const nameList = names.map((name, index) => <li key = {index}>{name}</li>)
 
     return(
-        <ul>{namelist}</ul>
+        <ul>{nameList}</ul>
     )
 }
 
