@@ -8,6 +8,8 @@ import EventPracticeComponent from "./Component/EventPracticeComponent";
 import ValidationSample from "./validation/ValidationSample";
 import RefSample from "./validation/RefSample";
 import ScrollBox from "./ScrollBox";
+
+import IterationSample from "./Component/IterationSample";
 class App extends Component{
     render() {
         const age = 5;
@@ -17,6 +19,7 @@ class App extends Component{
                 <button onClick={()=>this.scrollBox.scrollToTop()}>위로</button>
                 <Counter/>
                 <EventPractice/>
+                <IterationSample/>
             </>
         )
     }
