@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import Counter from "./component/Counter";
+import Info from "./component/Info"
+const App = () =>  {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +18,10 @@ function App() {
         >
           Learn React
         </a>
+          <Counter/>
+          <Info/>
       </header>
+
     </div>
   );
 }
