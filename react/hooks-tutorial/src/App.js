@@ -5,6 +5,7 @@ import Counter from "./component/Counter";
 import Info from "./component/Info"
 import CounterReducer from "./component/CounterReducer";
 import InfoReducer from "./component/InfoReducer";
+import Average from "./component/Average";
 const App = () =>  {
 
   const [visible, setVisible] = useState(false)
@@ -34,6 +35,7 @@ const App = () =>  {
         </button>
           <CounterReducer/>
           <InfoReducer/>
+        <Average/>
       </header>
 
     </div>
