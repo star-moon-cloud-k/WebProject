@@ -4,6 +4,7 @@ import './App.css';
 import Counter from "./component/Counter";
 import Info from "./component/Info"
 import CounterReducer from "./component/CounterReducer";
+import InfoReducer from "./component/InfoReducer";
 const App = () =>  {
 
   const [visible, setVisible] = useState(false)
@@ -32,7 +33,7 @@ const App = () =>  {
           {visible && <Info />}
         </button>
           <CounterReducer/>
-          <Info/>
+          <InfoReducer/>
       </header>
 
     </div>
