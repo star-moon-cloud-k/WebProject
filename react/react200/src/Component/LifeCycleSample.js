@@ -13,6 +13,7 @@ class LifeCycleSample extends Component {
         console.log('constructor');
     }
 
+    //props로 받아온 값을 state에 동기화 시키는 용도
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log('getDerivedStateFromProps');
         if (nextProps.color !== prevState.color) {
@@ -21,6 +22,7 @@ class LifeCycleSample extends Component {
         return null;
     }
 
+    //레더링 이후 호출
     componentDidMount() {
         console.log('componentDidMount');
     }
@@ -28,6 +30,8 @@ class LifeCycleSample extends Component {
     shouldComponentUpdate(nextProps, nextState, snapshot) {
         console.log('shouldComponentUpdate', nextProps, nextState);
         return nextState.number % 10 !== 4;
+        //true , false를 반환
+        //숫자의 마지막 자리가 4면 리렌더링 하지 않는다.
     }
 
     componentWillUnmount() {
@@ -36,10 +40,11 @@ class LifeCycleSample extends Component {
 
     handleClick = () => {
         this.setState({
-            number: this.setState.number + 1
+            number: this.state.number + 1
         });
     }
 
+    //render에서 만들어진 결과물이 반영되기 직전에 호출
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('getSnapshotBeforeUpdate');
         if (prevProps.color !== this.props.color) {

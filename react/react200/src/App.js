@@ -5,6 +5,7 @@ import LifeCycleSample from './Component/LifeCycleSample'
 //랜덤 색상을 생성
 function getRandomColor(){
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    //16777215 == 헥사로 ffffff 값이 된다
 }
 
 class App extends Component{
