@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
 import './App.css';
-import MyComponent from "./Component/MyComponent";
-import Counter from "./Component/Counter";
-import Say from "./Component/Say";
-import EventPractice from "./Component/EventPractice";
-import EventPracticeComponent from "./Component/EventPracticeComponent";
-import ValidationSample from "./validation/ValidationSample";
-import RefSample from "./validation/RefSample";
-import ScrollBox from "./ScrollBox";
+import LifeCycleSample from './Component/LifeCycleSample'
 
-import IterationSample from "./Component/IterationSample";
+//랜덤 색상을 생성
+function getRandomColor(){
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
 class App extends Component{
+    state = {
+            color: '#000000',
+        }
+
+        handleClick = () =>{
+            this.setState({
+                color:getRandomColor()
+            });
+        }
     render() {
-        const age = 5;
-        return (<>
-                <ScrollBox ref ={(ref) => this.scrollBox =ref}/>
-                <button onClick={()=>this.scrollBox.scrollToBottom()}>아래로</button>
-                <button onClick={()=>this.scrollBox.scrollToTop()}>위로</button>
-                <Counter/>
-                <EventPractice/>
-                <IterationSample/>
+        return (
+            <>
+              <button onClick={this.handleClick}>랜덤 색상</button>
+              <LifeCycleSample color = {this.state.color}/>
             </>
         )
     }

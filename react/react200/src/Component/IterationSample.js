@@ -24,6 +24,7 @@ const IterationSample = () => {
     };
     const onRemove = id =>{
         const nextNames = names.filter(name => name.id !== id);
+        //name.id의 값과 입력된 id의 값과 다른 배열들만을 추출하여 새로운 배열을 만든다는 의미.
         setNames(nextNames);
     };
 
