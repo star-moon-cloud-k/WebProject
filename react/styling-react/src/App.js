@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Component} from "react";
 import SassComponent from "./component/SassComponent";
+import CSSModule from "./component/CSSModule";
 
 class App extends Component{
   render() {
@@ -22,6 +23,7 @@ class App extends Component{
             </a>
           </header>
             <SassComponent/>
+          <CSSModule/>
         </div>
     );
   }
