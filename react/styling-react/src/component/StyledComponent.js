@@ -1,11 +1,38 @@
 import React from "react";
 import styled, {css} from 'styled-components';
 
+const sizes = {
+    desktop : 1024,
+    tablet : 768
+};
+
+//위에 있는 size 객체에 따라 자동으로 media 쿼리 함수를 만들어준다
+
+const media = Object.keys(sizes).reduce((acc,label)=>{
+    acc[label] = (...args) =>css`
+    @media (max-width: ${sizes[label] / 16}em){
+      ${css(...args)};
+    }
+    `;
+    return acc;
+}, {});
+
+
 const Box = styled.div`
     /*props로 넣어 준 값을 직접 전달해 줄 수 있다*/
-    background: ${props => props.color || 'blue'};
+    background: ${props => props.color || 'skyblue'};
+    /*색상을 입력해주지 않으면 skyblue로 사용 */
     padding : 1rem;
     display : flex;
+    /*기본적으로 가로 크기 1024px에 가운데 정렬을 하고
+    가로 크기가 작아짐에 다라 크기를 줄이고
+    768px 미만이 되면 꽉 채운다.
+    */
+    width: 1024px;
+    margin: 0 auto;
+
+    ${media.desktop`width: 768px;`}
+    ${media.tablet`width: 100%;`};
     &:hover{
       background:whitesmoke;
     }
@@ -23,7 +50,7 @@ const Button = styled.button`
     font-size : 1rem;
     font-weight : 600;
     
-    /* & 문잘르 사용하여 Sass처럼 자기 자신 선택 가능*/
+    /* &문자를 사용하여 Sass처럼 자기 자신 선택 가능*/
     &:hover{
     background: rgba(255, 255 , 255, 0.9);
     }
@@ -45,9 +72,9 @@ const Button = styled.button`
                 }
             `;
     const StyledComponent= () => (
-        <Box color = "black">
+        <Box color = "">
             <Button>안녕하세요</Button>
-            <Button inverted={true}>테두리만</Button>
+            <Button inverted={false}>테두리만</Button>
         </Box>
     );
 
