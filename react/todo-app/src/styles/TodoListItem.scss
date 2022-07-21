@@ -7,26 +7,30 @@
   }
   .checkbox {
     cursor: pointer;
-    flex: 1;    //차지할 수 있는 영역 모두 차지
+    flex: 1; //차지할 수 있는 영역 모두 차지
     display: flex;
     align-items: center;
-    svg{
+
+    svg {
       //아이콘
       font-size: 1.5rem;
     }
-  }
-  .text {
-    margin-left: 0.5rem;
-    flex: 1; //차지할 수 있는 영역 모두 차지
-  }
-  //체크되었을 때 보여 줄 스타일
-  &.checked{
-    svg{
-      color: #22b8cf;
+
+    .text {
+      margin-left: 0.5rem;
+      flex: 1; //차지할 수 있는 영역 모두 차지
     }
-    .text{
-      color: #adb5db;
-      text-decoration: line-through;
+
+    //체크되었을 때 보여 줄 스타일
+    &.checked {
+      svg {
+        color: #22b8cf;
+      }
+
+      .text {
+        color: #adb5db;
+        text-decoration: line-through;
+      }
     }
   }
 
