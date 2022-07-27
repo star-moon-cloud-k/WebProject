@@ -20,17 +20,10 @@ public class JpaMain {
             //비영속
             Member member = new Member();
             member.setId(101L);
-            member.setName("HelloB");
-
+            member.setUsername("Hello");
+            member.setRoleType(RoleType.USER);
             //영속
             em.persist(member);
-
-            //영속성 컨텍스트에서 분리, 준영속 상태
-            em.detach(member);
-
-            Member findMember = em.find(Member.class, 101L);
-
-
             tx.commit();
         }catch (Exception e){
             tx.rollback();
