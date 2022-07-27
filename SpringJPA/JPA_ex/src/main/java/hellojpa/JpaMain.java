@@ -16,16 +16,21 @@ public class JpaMain {
         //transaction 시작
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        try{Member member = new Member();
-//            member.setId(2L);
-//            member.setName("HelloB");
+        try{
+            //비영속
+            Member member = new Member();
+            member.setId(101L);
+            member.setName("HelloB");
 
-            Member findMember = em.find(Member.class, 1L);
-            findMember.setName("HelloJPA");
+            //영속
+            em.persist(member);
 
-            List<Member> result = em.createQuery("select m from Member as m", Member.class).getResultList();
+            //영속성 컨텍스트에서 분리, 준영속 상태
+            em.detach(member);
 
-//            em.persist(member);
+            Member findMember = em.find(Member.class, 101L);
+
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
