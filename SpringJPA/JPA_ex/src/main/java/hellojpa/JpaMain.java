@@ -26,8 +26,11 @@ public class JpaMain {
             Member member = new Member();
             member.setName("member1");
             member.setTeam(team);
-
             em.persist(member);
+
+            Member findMEmber = em.find(Member.class, member.getId());
+            System.out.println("findTeam " + findMEmber.getId());
+            tx.commit();
         }catch (Exception e){
             tx.rollback();
         }finally {
