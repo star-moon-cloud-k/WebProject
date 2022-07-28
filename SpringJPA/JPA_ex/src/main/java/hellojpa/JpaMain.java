@@ -19,7 +19,7 @@ public class JpaMain {
         try{
             //비영속
             Member member = new Member();
-            member.setId(101L);
+//            member.setId("101");
             member.setUsername("Hello");
             member.setRoleType(RoleType.USER);
             //영속
