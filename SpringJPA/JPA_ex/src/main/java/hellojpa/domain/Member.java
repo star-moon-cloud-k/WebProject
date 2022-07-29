@@ -37,7 +37,7 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team teamId) {
+    public void changeTeam(Team teamId) {
         this.team = teamId;
         team.getMembers().add(this);
         //객체지향적 개념으로 Team의 fk를 저장해주는 개념으로 생각한다.
