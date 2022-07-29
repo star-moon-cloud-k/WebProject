@@ -1,6 +1,8 @@
 package hellojpa.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -11,11 +13,16 @@ public class Member {
 
     @Column(name = "USERNAME")
     private String name;
-    private int age;
+    private String city;
+    private String street;
+    private String zipcode;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
+
+//    @ManyToOne
+//    @JoinColumn(name = "TEAM_ID")
+//    private Team team;
 
     public Long getId() {
         return id;
@@ -33,14 +40,14 @@ public class Member {
         this.name = name;
     }
 
-    public Team getTeam() {
-        return team;
-    }
-
-    public void changeTeam(Team teamId) {
-        this.team = teamId;
-        team.getMembers().add(this);
-        //객체지향적 개념으로 Team의 fk를 저장해주는 개념으로 생각한다.
-    }
+//    public Team getTeam() {
+//        return team;
+//    }
+//
+//    public void changeTeam(Team teamId) {
+//        this.team = teamId;
+//        team.getMembers().add(this);
+//        //객체지향적 개념으로 Team의 fk를 저장해주는 개념으로 생각한다.
+//    }
 }
 
