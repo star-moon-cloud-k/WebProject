@@ -13,9 +13,10 @@ const data = {
     }
 };
 
+// const Profile = ({match}) =>{//router V5 버전
 const Profile = () =>{
     const {username} = useParams(); //router V6 버전부터 사용
-    // const {username} = match.params;
+    // const {username} = match.params; //router V5 버전
     const profile = data[username];
     if (!profile){
         return <div>존재하지 않는 사용자입니다.</div>
