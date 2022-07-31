@@ -1,13 +1,25 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Link, Route, Routes} from "react-router-dom";
 import About from './component/About';
 import Home from './component/Home';
 
 const App = () => {
     return (
         <div>
-            <Route path="/" component={Home}/>
-            <Route path="/about" component={About}/>
+            <ul>
+                <li>
+                    <Link to="/">홈</Link>
+                </li>
+                <li>
+                    <Link to="about">소개</Link>
+                </li>
+            </ul>
+            <hr/>
+            <Routes>
+                <Route path="/" exact={false} element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/info" element = {<About/>}/>
+            </Routes>
         </div>
     );
 };
