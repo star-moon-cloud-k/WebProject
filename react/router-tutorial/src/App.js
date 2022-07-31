@@ -4,6 +4,7 @@ import About from './component/About';
 import Home from './component/Home';
 import Profile from "./component/Profile";
 import Profiles from "./component/Profiles";
+import HistorySample from "./component/HistorySample";
 
 const App = () => {
     return (
@@ -18,12 +19,15 @@ const App = () => {
                 <li>
                     <Link  to="/profiles">프로필</Link>
                 </li>
+                <li>
+                    <Link  to="/history">History 예제</Link>
+                </li>
             </ul>
-            <hr/>
             <Routes>
                 <Route path="/" exact={false} element={<Home/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path="/profiles/*" element={<Profiles/>}/>
+                <Route path="/history" element={<HistorySample/>}/>
             </Routes>
         </div>
     );
