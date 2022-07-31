@@ -5,7 +5,6 @@ import Home from './component/Home';
 import Profile from "./component/Profile";
 
 const App = () => {
-    const [data , setData] = useState({username : ''})
     return (
         <div>
             <ul>
@@ -27,7 +26,7 @@ const App = () => {
             <Routes>
                 <Route path="/" exact={false} element={<Home/>}/>
                 <Route path='/about' element={<About/>}/>
-                <Route path="/profile/:username" element={<Profile  match = {data}/>}/>
+                <Route path="/profile/:username" element={<Profile/>}/>
             </Routes>
         </div>
     );
