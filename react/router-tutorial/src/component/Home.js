@@ -11,14 +11,15 @@ const Home = () =>{
                     <Link to ="/about">소개</Link>
                 </li>
                 <li>
-                    <Link to = "/profiles/velopert">velopert</Link>
+                    <Link to = "/profiles/star_moon_cloud_k">star-moon-cloud-k</Link>
                 </li>
                 <li>
                     <Link to = "/profiles/gildong">gildong</Link>
                 </li>
                 <li>
-                    <Link to = "/profiles/void">존재하지 않는 프로필</Link>
+                    <Link to = "/articles">게시글 목록</Link>
                 </li>
+
             </ul>
         </div>
     );
