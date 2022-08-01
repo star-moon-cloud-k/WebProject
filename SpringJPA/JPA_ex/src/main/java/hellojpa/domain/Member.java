@@ -13,12 +13,21 @@ public class Member {
 
     @Column(name = "USERNAME")
     private String name;
-    private String city;
-    private String street;
-    private String zipcode;
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 
 //    @ManyToOne
 //    @JoinColumn(name = "TEAM_ID")
@@ -38,6 +47,10 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
+        //무한 루프에 빠지지 않도록 체크
+        if (!team.getMembers().contains(this)) {
+            team.getMembers().add(this);
+        }
     }
 
 //    public Team getTeam() {
