@@ -20,34 +20,16 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
+            Member member = new Member();
+            member.setName("member1");
+
+            em.persist(member);
 
             Team team = new Team();
             team.setName("TeamA");
+
+            team.getMembers().add(member);
             em.persist(team);
-
-            Member member = new Member();
-            member.setName("Member1");
-            em.persist(member);
-
-//            team.getMembers().add(member);
-          //객체 지향적으로 값을 저장하는게 맞다.
-            //연관관계의 주인이 아닌 값의 값 입력
-
-
-//            em.flush();
-//            em.clear();
-
-            Team findTeam = em.find(Team.class, team.getId());  //1차 캐시
-
-            List<Member> members = findTeam.getMembers();
-
-
-            System.out.println("================");
-            for (Member m : members){
-                System.out.println("m = " + m.getName());
-            }
-            System.out.println("================");
-
 
             tx.commit();
         }catch (Exception e){
