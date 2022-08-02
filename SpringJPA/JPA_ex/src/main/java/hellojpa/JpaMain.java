@@ -1,5 +1,6 @@
 package hellojpa;
 
+import hellojpa.domain.Locker;
 import hellojpa.domain.Member;
 import hellojpa.domain.Team;
 
@@ -22,8 +23,15 @@ public class JpaMain {
         try{
             Member member = new Member();
             member.setName("member1");
-
             em.persist(member);
+
+            Locker locker = new Locker();
+            locker.setMember(member);
+            locker.setName(member.getName());
+
+            em.persist(locker);
+
+            member.setLocker(locker);
 
             Team team = new Team();
             team.setName("TeamA");

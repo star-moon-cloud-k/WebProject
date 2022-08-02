@@ -19,6 +19,8 @@ public class Member {
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
+
+
     @ManyToOne
     @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     private Team team;
@@ -39,5 +41,9 @@ public class Member {
         this.name = name;
 
     }
+    public void setLocker(Locker locker) {
+        this.locker = locker;
+    }
+
 }
 
