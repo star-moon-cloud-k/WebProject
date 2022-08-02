@@ -10,7 +10,8 @@ public class Locker {
     @Column(name = "LOCKER_ID")
     private Long id;
     private String name;
-    @OneToOne(mappedBy = "locker")
+    @OneToOne
+    @JoinColumn(name="MEMBER_ID")
     private Member member;
 
     public Long getId() {
