@@ -1,6 +1,7 @@
 package hellojpa.domain;
 
 import javax.persistence.*;
+import java.net.CookieStore;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,4 +46,23 @@ public class Member {
         this.locker = locker;
     }
 
+    public Locker getLocker() {
+        return locker;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }

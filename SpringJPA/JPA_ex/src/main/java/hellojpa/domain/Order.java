@@ -1,42 +1,65 @@
 package hellojpa.domain;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "ORDERS")
 public class Order {
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
-//    @Column(name = "MEMBER_ID")
-//    private Long memberId;
-    @ManyToOne
-    @JoinColumn(name ="MEMBER_ID")
-    private Member member;
 
     @ManyToOne
-    @JoinColumn(name="PRODUCT_ID")
-    private Product product;
+    @JoinColumn(name = "MEMBER_ID")
+    private Member member;      //주문 회원
 
-    private int orderAmount;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
-    public Product getProduct() {
-        return product;
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
+
+    private Date orderDate;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status; //주문 상태
+
+
+    //==연관 관계 메소드==//
+
+
+    public Member getMember() {
+        return member;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setMember(Member member) {
+        //기존 관계 제거
+        if (this.member != null) {
+            this.member.getOrders().remove(this);
+
+        }
+        this.member = member;
+        member.getOrders().add(this);
     }
 
-    public int getOrderAmount() {
-        return orderAmount;
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+        delivery.setOrder(this);
     }
 
-    public void setOrderAmount(int orderAmount) {
-        this.orderAmount = orderAmount;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public List<OrderItem> getOrderItems() {
@@ -47,34 +70,15 @@ public class Order {
         this.orderItems = orderItems;
     }
 
-    private LocalDateTime orderDate;
-    @Enumerated(EnumType.STRING)
-    private OrderStatus status;
-
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems = new ArrayList<>();
-
-    public Long getId() {
-        return id;
+    public Delivery getDelivery() {
+        return delivery;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
-    public LocalDateTime getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDateTime orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 
@@ -84,10 +88,5 @@ public class Order {
 
     public void setStatus(OrderStatus status) {
         this.status = status;
-    }
-
-    public void addOrderItem(OrderItem orderItem) {
-        orderItems.add(orderItem);
-        orderItem.setOrder(this);
     }
 }

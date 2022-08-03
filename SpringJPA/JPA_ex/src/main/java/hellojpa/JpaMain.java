@@ -26,7 +26,6 @@ public class JpaMain {
 
             Order order = new Order();
             order.setMember(member1);
-            order.setOrderAmount(2);
             em.persist(order);
 
             tx.commit();
