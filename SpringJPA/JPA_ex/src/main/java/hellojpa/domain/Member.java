@@ -22,6 +22,16 @@ public class Member {
     @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     private Team team;
 
+    @ManyToMany
+    @JoinTable(name = "MEMBER_PRODUCT",
+    joinColumns =  @JoinColumn(name = "MEMBER_ID"),
+    inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
+    private List<Product> products = new ArrayList<Product>();
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
     public Long getId() {
         return id;
     }
@@ -43,4 +53,3 @@ public class Member {
     }
 
 }
-
