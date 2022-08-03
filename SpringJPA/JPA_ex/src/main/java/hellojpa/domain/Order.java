@@ -16,6 +16,37 @@ public class Order {
     @ManyToOne
     @JoinColumn(name ="MEMBER_ID")
     private Member member;
+
+    @ManyToOne
+    @JoinColumn(name="PRODUCT_ID")
+    private Product product;
+
+    private int orderAmount;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getOrderAmount() {
+        return orderAmount;
+    }
+
+    public void setOrderAmount(int orderAmount) {
+        this.orderAmount = orderAmount;
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
     private LocalDateTime orderDate;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;

@@ -18,19 +18,12 @@ public class Member {
     @OneToOne(mappedBy = "member")
     private Locker locker;
 
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<Order>();
+
     @ManyToOne
     @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
     private Team team;
-
-    @ManyToMany
-    @JoinTable(name = "MEMBER_PRODUCT",
-    joinColumns =  @JoinColumn(name = "MEMBER_ID"),
-    inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
-    private List<Product> products = new ArrayList<Product>();
-
-    public List<Product> getProducts() {
-        return products;
-    }
 
     public Long getId() {
         return id;

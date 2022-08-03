@@ -1,9 +1,6 @@
 package hellojpa.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +11,8 @@ public class Product {
     private String id;
     private String name;
 
-    @ManyToMany(mappedBy = "products")  //역방향 추가
-    private List<Member> members = new ArrayList<>();
 
-    public List<Member> getMembers() {
-        return members;
-    }
+
 
     public String getId() {
         return id;

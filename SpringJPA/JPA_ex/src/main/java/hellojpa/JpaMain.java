@@ -1,9 +1,6 @@
 package hellojpa;
 
-import hellojpa.domain.Locker;
-import hellojpa.domain.Member;
-import hellojpa.domain.Product;
-import hellojpa.domain.Team;
+import hellojpa.domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,13 +19,17 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
-            Product product = em.find(Product.class, "productA");
-            List<Member> members = product.getMembers();
-              //객체 그래프 탐색
-            for (Member member : members) {
-                System.out.println("member.name = " + member.getName());
-            }
+            Member member1 = new Member();
+//            member1.setId("");
+            member1.setName("회원");
+            em.persist(member1);
 
+            Order order = new Order();
+            order.setMember(member1);
+            order.setOrderAmount(2);
+            em.persist(order);
+
+            tx.commit();
         }catch (Exception e){
             tx.rollback();
         }finally {
