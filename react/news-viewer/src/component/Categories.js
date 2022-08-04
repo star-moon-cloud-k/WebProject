@@ -76,6 +76,7 @@ const Categories = () =>{
                 <Category
                     key = {c.name}
                     to={c.name === 'all' ? 'general' : `/${c.name}`}
+
                 >
                     {c.text}
                 </Category>
