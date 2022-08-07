@@ -1,3 +1,5 @@
+import { createStore} from 'redux';
+
 const divToggle = document.querySelector('.toggle');
 const counter = document.quertSelector('h1');
 const btnIncrease = document.querySelector('#increase');
@@ -18,8 +20,6 @@ const initialState = {
 	counter : 0
 };
 
-const increase = difference => ({ type: INCREASE, difference});
-const decrease = difference => ({ type: DECREASE});
 
 //state가 undefined일 때는 initialState를 기본값으로 사용
 
@@ -45,3 +45,19 @@ function reducer (state = initialState, action){
 			return state;
 	}
 }
+
+const store = createStore(reducer);
+
+const render = () =>{
+	const state = store.getState(); //현재 상태를 불러온다.
+	//토글 처리
+	if(state.toggle){
+		divToggle.classList.add('active');
+	}else{
+		divToggle.classList.remove('active');
+	}
+	//카운터 처리
+	counter.innerText = state.counter;
+};
+
+render();
