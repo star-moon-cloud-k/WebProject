@@ -1,7 +1,7 @@
-import { createStore} from 'redux';
+import { createStore } from 'redux';
 
 const divToggle = document.querySelector('.toggle');
-const counter = document.quertSelector('h1');
+const counter = document.querySelector('h1');
 const btnIncrease = document.querySelector('#increase');
 const btnDecrease = document.querySelector('#decrease');
 
@@ -10,7 +10,7 @@ const INCREASE = 'INCREASE';
 const DECREASE = 'DECREASE';
 
 const toggleSwitch = () => ({type: TOGGLE_SWITCH});
-const increase = difference = ({type: INCREASE, difference });
+const increase = difference => ({type: INCREASE, difference });
 const decrease = () => ({type: DECREASE});
 
 //액션 타입과 액션 생성 함수 정의
@@ -61,3 +61,14 @@ const render = () =>{
 };
 
 render();
+store.subscribe(render);
+
+divToggle.onClick = () =>{
+	store.dispatch(toggleSwitch());
+};
+btnIncrease.onClick = () =>{
+	store.dispatch(increase(1));
+};
+btnDecrease.onClick = () =>{
+	store.dispatch(decrease());
+};
