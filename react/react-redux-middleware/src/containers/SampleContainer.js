@@ -5,34 +5,41 @@ import {getPost, getUsers} from '../modules/sample';
 
 const {useEffect} = React;
 const SampleContainer = ({
-    getPost,
-    getUsers,
-    post,
-    users,
-    loadingPost,
-    loadingUsers
-})=>{
+                             getPost,
+                             getUsers,
+                             post,
+                             users,
+                             loadingPost,
+                             loadingUsers
+                         }) => {
     //클래스 형태 컴포넌트였다면 componentDidMount
-    useEffect(()=>{
-        getPost(1);
-        getUsers(1);
+    useEffect(() => {
+        const fn = async () => {
+            try {
+                getPost(1);
+                getUsers(1);
+            }catch (e){
+                console.log(e);
+            }
+        };
+        fn();
     }, [getPost, getUsers]);
     return (
         <Sample
-            post ={post}
-            users = {users}
+            post={post}
+            users={users}
             loadingUsers={loadingUsers}
             loadingPost={loadingPost}
-            />
+        />
     );
 };
 
 export default connect(
-    ({sample}) =>({
+    ({sample, loading}) => ({
         post: sample.post,
         users: sample.users,
-        loadingPost : sample.loading.GET_POST,
-        loadingUsers : sample.loading.GET_USERS
+        loadingPost: loading['sample/GET_POST'],
+        loadingUsers: loading['sample/GET_USERS']
     }),
     {
         getPost,
