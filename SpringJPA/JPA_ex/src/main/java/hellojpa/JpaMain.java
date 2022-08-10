@@ -19,15 +19,11 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try{
-            Member member1 = new Member();
-//            member1.setId("");
-            member1.setName("회원");
-            em.persist(member1);
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("김영한");
 
-            Order order = new Order();
-            order.setMember(member1);
-            em.persist(order);
-
+            em.persist(book);
             tx.commit();
         }catch (Exception e){
             tx.rollback();
