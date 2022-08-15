@@ -2,11 +2,19 @@ import React, {useState, Suspense} from "react";
 import logo from './logo.svg';
 import './App.css';
 
-const SplitMe = React.lazy( () => import('./notify'));
+import loadable from '@loadable/component';
+
+const SplitMe = loadable( () => import('./notify'),{
+  fallback: <div>loading</div>
+});
 
 
 function App() {
   const [visible, setVisible] = useState(false);
+
+  const onMouseOver = () =>{
+    SplitMe.preload();
+  }
 
   const onClick = () =>{
     setVisible(true);
@@ -15,10 +23,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p onClick={onClick}>Hello React!</p>
-        <Suspense fallback={<div>loading</div>}>
+        <p onClick={onClick} onMouseOver={onMouseOver}>Hello React!</p>
           {visible && <SplitMe/>}
-        </Suspense>
         <a
           className="App-link"
           href="https://reactjs.org"
