@@ -20,34 +20,15 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Team team = new Team();
-            team.setName("TeamA");
-            em.persist(team);
+            Child child1 = new Child();
+            Child child2 = new Child();
 
-            Member member = new Member();
-            member.setName("member1");
-            member.setTeam(team);
-            em.persist(member);
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
 
+            em.persist(parent);
 
-            em.flush();
-            em.clear();
-            System.out.println("======= 저 장 =======");
-            Member memberFind = em.getReference(Member.class, member.getId());
-            System.out.println("========getReference========");
-            Hibernate.initialize(memberFind);
-            System.out.println("================");
-            Member m1 = em.find(Member.class, member.getId());
-            System.out.println("m1 = " + m1.getClass());
-
-
-            System.out.println("================");
-            System.out.println("member " + memberFind.getName());
-            System.out.println("member " + memberFind.getTeam().getName());
-            System.out.println("================");
-
-            System.out.println("reference = " + memberFind.getClass());
-//            System.out.println("team " + memberFind.getTeam());
             tx.commit();
 
         } catch (Exception e) {
