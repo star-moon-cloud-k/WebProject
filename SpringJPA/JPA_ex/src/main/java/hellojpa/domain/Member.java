@@ -19,7 +19,7 @@ public class Member extends BaseEntity{
     @OneToOne(mappedBy = "member")
     private Locker locker;
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member" )
     private List<Order> orders = new ArrayList<Order>();
 
     @ManyToOne(fetch = FetchType.LAZY)

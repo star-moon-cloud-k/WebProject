@@ -10,7 +10,7 @@ public class Locker {
     @Column(name = "LOCKER_ID")
     private Long id;
     private String name;
-    @OneToOne
+    @OneToOne (fetch = FetchType.LAZY)
     @JoinColumn(name="MEMBER_ID")
     private Member member;
 
