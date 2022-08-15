@@ -1,6 +1,7 @@
 package hellojpa;
 
 import hellojpa.domain.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -21,8 +22,6 @@ public class JpaMain {
         try {
             Member member = new Member();
             member.setName("member1");
-
-
             em.persist(member);
 
             Team team = new Team();
@@ -33,13 +32,21 @@ public class JpaMain {
 
             em.flush();
             em.clear();
+
             Member memberFind = em.getReference(Member.class, member.getId());
+            System.out.println("================");
+            Hibernate.initialize(memberFind);
+            System.out.println("================");
+            Member m1 = em.find(Member.class, member.getId());
+            System.out.println("m1 = " + m1.getClass());
+
 
             System.out.println("================");
             System.out.println("member " + memberFind.getName());
             System.out.println("member " + memberFind.getId());
             System.out.println("================");
 
+            System.out.println("reference = " + memberFind.getClass());
 //            System.out.println("team " + memberFind.getTeam());
             tx.commit();
 
