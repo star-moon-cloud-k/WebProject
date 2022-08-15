@@ -18,16 +18,34 @@ public class JpaMain {
         //transaction 시작
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        try{
-            Book book = new Book();
-            book.setName("JPA");
-            book.setAuthor("김영한");
+        try {
+            Member member = new Member();
+            member.setName("member1");
 
-            em.persist(book);
+
+            em.persist(member);
+
+            Team team = new Team();
+            team.setName("TeamA");
+            member.setTeam(team);
+
+            em.persist(team);
+
+            em.flush();
+            em.clear();
+            Member memberFind = em.getReference(Member.class, member.getId());
+
+            System.out.println("================");
+            System.out.println("member " + memberFind.getName());
+            System.out.println("member " + memberFind.getId());
+            System.out.println("================");
+
+//            System.out.println("team " + memberFind.getTeam());
             tx.commit();
-        }catch (Exception e){
+
+        } catch (Exception e) {
             tx.rollback();
-        }finally {
+        } finally {
             em.close();
         }
         emf.close();
