@@ -20,21 +20,21 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Member member = new Member();
-            member.setName("member1");
-            em.persist(member);
-
             Team team = new Team();
             team.setName("TeamA");
-            member.setTeam(team);
-
             em.persist(team);
+
+            Member member = new Member();
+            member.setName("member1");
+            member.setTeam(team);
+            em.persist(member);
+
 
             em.flush();
             em.clear();
-
+            System.out.println("======= 저 장 =======");
             Member memberFind = em.getReference(Member.class, member.getId());
-            System.out.println("================");
+            System.out.println("========getReference========");
             Hibernate.initialize(memberFind);
             System.out.println("================");
             Member m1 = em.find(Member.class, member.getId());
@@ -43,7 +43,7 @@ public class JpaMain {
 
             System.out.println("================");
             System.out.println("member " + memberFind.getName());
-            System.out.println("member " + memberFind.getId());
+            System.out.println("member " + memberFind.getTeam().getName());
             System.out.println("================");
 
             System.out.println("reference = " + memberFind.getClass());
