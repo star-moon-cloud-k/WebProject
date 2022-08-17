@@ -18,30 +18,17 @@ public class Member extends BaseEntity {
     @Column(name = "USERNAME")
     private String name;
 
-    public Set<String> getFavoriteFoods() {
-        return favoriteFoods;
-    }
-
-    public void setFavoriteFoods(Set<String> favoriteFoods) {
-        this.favoriteFoods = favoriteFoods;
-    }
-
-    public List<Address> getAddressHistory() {
-        return addressHistory;
-    }
-
-    public void setAddressHistory(List<Address> addressHistory) {
-        this.addressHistory = addressHistory;
-    }
-
     @ElementCollection
     @CollectionTable(name = "FAVORITE_FOOD", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     @Column(name = "FOOD_NAME")
     private Set<String> favoriteFoods = new HashSet<>();
-
-    @ElementCollection
-    @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name="MEMBER_ID"))
-    private List<Address> addressHistory = new ArrayList<>();
+//
+//    @ElementCollection
+//    @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name="MEMBER_ID"))
+//    private List<Address> addressHistory = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "MEMBER_ID")
+    private List<AddressEntity> addressHistory = new ArrayList<>();
     @OneToOne(mappedBy = "member")
     private Locker locker;
 
@@ -79,6 +66,15 @@ public class Member extends BaseEntity {
     public void setName(String name) {
         this.name = name;
 
+    }
+
+
+    public Set<String> getFavoriteFoods() {
+        return favoriteFoods;
+    }
+
+    public void setFavoriteFoods(Set<String> favoriteFoods) {
+        this.favoriteFoods = favoriteFoods;
     }
 
     public void setLocker(Locker locker) {
@@ -127,5 +123,13 @@ public class Member extends BaseEntity {
 
     public void setWorkAddress(Address workAddress) {
         this.workAddress = workAddress;
+    }
+
+    public List<AddressEntity> getAddressHistory() {
+        return addressHistory;
+    }
+
+    public void setAddressHistory(List<AddressEntity> addressHistory) {
+        this.addressHistory = addressHistory;
     }
 }
