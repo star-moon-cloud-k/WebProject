@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.util.List;
+import java.util.Set;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -20,11 +21,37 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Member member = new Member();
+            member.setName("member1");
+            member.setHomeAddress(new Address("city", "street", "10000"));
 
-            Address address1 = new Address("city", "street", "10000");
-            Address address2 = new Address("city", "street", "10000");
-            System.out.println("address1 == address2 : " + (address1 == address2));
-            System.out.println("address1 equals address2 : " + (address1.equals(address2)));
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+            member.getAddressHistory().add(new Address("old1", "street", "10000"));
+            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            System.out.println("===================================");
+            Member findMember = em.find(Member.class, member.getId());
+
+
+            System.out.println("===================================");
+            List<Address> addressHistory = findMember.getAddressHistory();
+            for(Address address : addressHistory){
+                System.out.println("Address = " + address.getCity());
+            }
+            System.out.println("===================================");
+            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+            for(String favoriteFood : favoriteFoods){
+                System.out.println("favoriteFood = " + favoriteFood);
+            }
+
             tx.commit();
 
         } catch (Exception e) {
