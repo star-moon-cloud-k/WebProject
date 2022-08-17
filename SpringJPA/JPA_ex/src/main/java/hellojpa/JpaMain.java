@@ -20,12 +20,11 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Member member = new Member();
-            member.setName("member1");
-            member.setHomeAddress(new Address("city" ,"street","+82"));
-            member.setWorkPeriod(new Period());
-            member.setWorkAddress(new Address());
-            em.persist(member);
+
+            Address address1 = new Address("city", "street", "10000");
+            Address address2 = new Address("city", "street", "10000");
+            System.out.println("address1 == address2 : " + (address1 == address2));
+            System.out.println("address1 equals address2 : " + (address1.equals(address2)));
             tx.commit();
 
         } catch (Exception e) {
