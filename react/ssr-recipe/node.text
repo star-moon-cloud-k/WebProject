@@ -1,0 +1,10 @@
+Creating server build...
+==============2============
+Creating server build...
+==============2============
+=============3============
+asset server.js 453 bytes [emitted] [minimized] (name: main)
+orphan modules 126 bytes [orphan] 3 modules
+runtime modules 663 bytes 3 modules
+./src/index.server.js + 3 modules 382 bytes [not cacheable] [built] [code generated]
+webpack 5.74.0 compiled successfully in 451 ms
