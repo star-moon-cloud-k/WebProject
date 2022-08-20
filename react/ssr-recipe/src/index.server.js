@@ -5,7 +5,11 @@ import { StaticRouter } from "react-router-dom/server";
 import App from "./App";
 import path from "path";
 import fs from "fs";
-
+import PreloadContext from "./lib/PreloadContect";
+import rootReducer from "./module/index";
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
 //asset-manifest.json 에서 파일 경로들을 조회
 const manifest = JSON.parse(
   fs.readFileSync(path.resolve("./build/asset-manifest.json"), "utf8")
@@ -48,10 +52,18 @@ const app = express();
 const serverRender = (req, res, next) => {
   //이 함수는 404가 떠야 하는 상황에 404를 띄우지 않고 서버 사이드 렌더링을 해줍니다.
   const context = {};
+  const store = createStore(rootReducer, applyMiddleware(thunk));
+
+  const PreloadContext = {
+    done: false,
+    promises: [],
+  };
   const jsx = (
-    <StaticRouter location={req.url} context={context}>
-      <App />
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
+    </Provider>
   );
   const root = ReactDOMServer.renderToString(jsx); //렌더링을 하고
   res.send(createPage(root)); //클라이언트에게 결과물을 응답합니다.
