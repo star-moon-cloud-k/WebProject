@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Users from "../component/Users";
 import { connect } from "react-redux";
 import { getUsers } from "../module/users";
-import { Preloader } from "../lib/PreloadContect";
+import { Preloader } from "../lib/PreloadContext";
 const UsersContainer = ({ users, getUsers }) => {
   //컴포넌트가 마운트되고 나서 호출
   useEffect(() => {

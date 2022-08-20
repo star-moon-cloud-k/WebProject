@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-import PreloadContext from './PreloadContect';
 
 //서버 환경 : {done: false , promises : []}
 const PreloadContext = createContext(null);
