@@ -1,8 +1,10 @@
 package jpql;
 
 import jpql.domain.Member;
+import jpql.domain.MemberDTO;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 public class JpaMain {
@@ -22,11 +24,20 @@ public class JpaMain {
             member.setAge(10);
             em.persist(member);
 
-//            TypedQuery<Member> query =
-             Member result = em.createQuery("select m from Member m where m.username = :username", Member.class)
+
+             Member result = em.createQuery("select m from  Member m where m.username = :username", Member.class)
             .setParameter("username", "member1")
             .getSingleResult();
             System.out.println("singleResult = " + result.getUsername());
+            result.setAge(20);
+            tx.commit();
+
+            List<MemberDTO> result2 =  em.createQuery("select new jpql.domain.MemberDTO(m.username,m.age) from Member m" , MemberDTO.class)
+                    .getResultList();
+
+            MemberDTO memberDTO = result2.get(0);
+            System.out.println("memberDTO = " + memberDTO.getUsername());
+            System.out.println("memberDTO = " + memberDTO.getAge());
             tx.commit();
 
         } catch (Exception e) {

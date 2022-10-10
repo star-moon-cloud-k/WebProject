@@ -5,16 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3adb4002-0b91-42e6-901b-5f4ec2dc786d" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/domain/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/domain/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/domain/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JPA_ex/src/main/java/hellojpa/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JPA_ex/src/main/java/hellojpa/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JPA_ex/target/classes/hellojpa/JpaMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JPA_ex/target/classes/hellojpa/JpaMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jpql/domain/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/11_array.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/12_arrayIndexStr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/13_arrayInArray.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/14_arrayPush.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/15_varDump.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/16_arrayNoIndex.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/17_list.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/18-1_range.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/18-2_range.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/19_count.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/20_dataType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/21-2_dataTypeConverison.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/21-3_dataTypeConversion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/21_dataTypeConversion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/22-1_if.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/22-2_if.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/23_else.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/24_else_if.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/25-1_switch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/25-2_switchNoBreak.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/26_else_switch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/27_switch-condition.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/28_for.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/29_for-in-if.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/30_break.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/31_continue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/32-1_for-in-for.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/32-2_for-mul.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/33-1_foreach.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/33-2_foreach.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/33-3_foreach.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/33-4_foreach.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/34_while.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/35-2_do-while.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/35_do-while.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/36_trim.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/37_strtoupper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/38_strtolower.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/39_strlen.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/40_str_replace.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/41_substr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/42_ucfirst.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/43_ucwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/beginner/44_strpos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/10_operator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/2_print.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/3_comment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/4_variable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/5_variableRule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/6_operator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/7_costant.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/8_operator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/200/entry/9_operator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/helloworld.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/variable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PHP/variable_scope.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JPQL_ex.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jpql/JpaMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jpql/JpaMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tree" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,18 +119,18 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/META-INF" />
@@ -113,7 +165,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662101087248</updated>
       <workItem from="1662101088412" duration="333000" />
-      <workItem from="1662101426171" duration="3632000" />
+      <workItem from="1662101426171" duration="4215000" />
+      <workItem from="1665384887732" duration="1021000" />
     </task>
     <servers />
   </component>
